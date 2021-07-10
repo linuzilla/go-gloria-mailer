@@ -13,3 +13,8 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+.idea/
+sample-data/
+settings.conf
+go-gloria-mailer
