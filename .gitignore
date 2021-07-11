@@ -18,3 +18,5 @@
 sample-data/
 settings.conf
 go-gloria-mailer
+!sample/*
+

@@ -5,9 +5,7 @@ import (
 	"github.com/linuzilla/go-gloria-mailer/config"
 	"github.com/linuzilla/go-gloria-mailer/flags"
 	"github.com/linuzilla/go-gloria-mailer/mime-composer"
-	"log"
 	"net/smtp"
-	"os"
 )
 
 type Client interface {
@@ -54,8 +52,7 @@ func (impl *clientImpl) SendMailTo(recipient string, displayName string, subject
 
 	if flags.SendEmail {
 		if err := smtp.SendMail(impl.smtpHost, impl.auth, impl.mailFrom, []string{recipient}, []byte(composer.Compose())); err != nil {
-			log.Println(err)
-			os.Exit(-1)
+			return err
 		} else {
 			fmt.Println("Email sent to:", recipient, " via ", impl.smtpHost)
 		}
