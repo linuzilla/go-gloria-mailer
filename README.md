@@ -31,7 +31,7 @@ Send bulk emails using excel mail merge. (Go Language Version)
            
 ```shell
 go mod tidy
-go buid
+go build
 ```
 
 設定檔這次改採用 TOML 的格式，它是一個很簡單的格式 。
